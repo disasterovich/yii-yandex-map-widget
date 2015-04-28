@@ -32,6 +32,10 @@ function init()
     for (var i = 0; i < yandex_maps_markers.length; i++) 
         { createMarker(yandex_maps_markers[i]); }
         
+    clusterer = new ymaps.Clusterer();
+    clusterer.add(markers);
+    myMap.geoObjects.add(clusterer);
+        
     //Если маркер один и его перемещение разрешено, то сделаем его перемещаемым по двойному клику
     if ( yandex_maps_markers.length == 1 && yandex_maps_markers[0].draggable == true)
         {
@@ -55,7 +59,5 @@ function createMarker(yandex_maps_marker)
         }
         );
             
-    myMap.geoObjects.add(marker);
-        
     markers.push(marker);
     }
