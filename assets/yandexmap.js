@@ -53,6 +53,7 @@ function createMarker(yandex_maps_marker)
         {
         hintContent: yandex_maps_marker['title'],
         balloonContent: '<div class="popup_window"><img src="images/'+yandex_maps_marker['image']+'" />'+yandex_maps_marker['window_content']+'</div>',
+        balloonContentHeader: yandex_maps_marker['title'],
         },
         {
         draggable: yandex_maps_marker['draggable'],
